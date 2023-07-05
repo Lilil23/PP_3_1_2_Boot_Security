@@ -14,9 +14,7 @@ public class Role implements GrantedAuthority {
     private Long id;
     @Column(name = "name")
     private String roleName;
-    @Transient
-    @ManyToMany(mappedBy = "roles")
-    private Set<User> users;
+
     public Role() {
     }
 
@@ -32,12 +30,7 @@ public class Role implements GrantedAuthority {
         this.id = id;
         this.roleName = name;
     }
-    public Set<User> getUsers() {
-        return users;
-    }
-    public void setUsers(Set<User> users) {
-        this.users = users;
-    }
+
     public Long getId() {
         return id;
     }
@@ -61,7 +54,6 @@ public class Role implements GrantedAuthority {
         return "Role{" +
                 "id=" + id +
                 ", roleName='" + roleName + '\'' +
-                ", users=" + users +
                 '}';
     }
 }

@@ -13,7 +13,6 @@ import ru.kata.spring.boot_security.demo.models.User;
 import java.util.List;
 
 @Service
-@Transactional
 public class UserServiceImpl implements UserService {
 
     private final UserDao userDao;
